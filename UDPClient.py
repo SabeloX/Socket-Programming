@@ -13,7 +13,7 @@ from socket import *
 """ 
     Either a string with server IP address (e.g., 128.138.32.126) or
     server hostname (e.g., cis.poly.edu) - an automatic DNS lookup will happen to get the IP address"""
-server_name = 'hostname'
+server_name = '127.0.0.1'
 
 """ Server Port Number """
 server_port = 12000

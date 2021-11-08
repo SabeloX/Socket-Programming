@@ -13,7 +13,7 @@ from socket import *
 """ 
     Either a string with server IP address (e.g., 128.138.32.126) or
     server hostname (e.g., cis.poly.edu) - an automatic DNS lookup will happen to get the IP address"""
-server_name = '127.0.0.1'
+# server_name = '127.0.0.1'
 
 """ Server Port Number """
 server_port = 12000
@@ -26,7 +26,7 @@ server_port = 12000
 server_socket = socket(AF_INET, SOCK_STREAM)
 
 """ Assigns the port number to the server socket """
-server_socket.bind((server_name, server_port))
+server_socket.bind(('', server_port))
 
 """ Listens for TCP connection, argument 1 means max of 1 queued connection """
 server_socket.listen(1)
@@ -39,7 +39,7 @@ while True:
     connection_socket, address = server_socket.accept()
 
     """ Gets data from the client throught the server socket """
-    message = server_socket.recvfrom(2048)
+    message = connection_socket.recv(1024)
 
     """ Converts message from byte to string and capitalize chatracters """
     modifiedMessage = message.decode().upper()

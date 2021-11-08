@@ -42,7 +42,7 @@ client_socket.send(byte_message)
 """
     incomming packet's data (from server) is stored in modified_message
 """
-modified_message = client_socket.recvfrom(1024)
+modified_message = client_socket.recv(1024)
 
 """ Converts the message from byte to string and displays it"""
 print(modified_message.decode())
